@@ -31,9 +31,9 @@ public class PatientController {
         return ResponseEntity.ok(patientService.getPatientById(id));
     }
 
-    @GetMapping("/medical-id/{medicalId}")
+    @GetMapping("/medical/{medicalId}")  // ← CAMBIADO: sin "-id"
     public ResponseEntity<Patient> getPatientByMedicalId(@PathVariable String medicalId) {
-        log.info("GET /api/patients/medical-id/{} - Obteniendo paciente por ID médico", medicalId);
+        log.info("GET /api/patients/medical/{} - Obteniendo paciente por ID médico", medicalId);
         return ResponseEntity.ok(patientService.getPatientByMedicalId(medicalId));
     }
 
